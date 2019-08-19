@@ -1,5 +1,5 @@
 {
-	"name": "@sindresorhus/do-not-disturb",
+	"name": "@iteleport/do-not-disturb",
 	"version": "1.1.0",
 	"description": "Control the macOS `Do Not Disturb` feature",
 	"license": "MIT",
@@ -14,13 +14,10 @@
 	},
 	"scripts": {
 		"test": "xo && ava",
-		"build": "swift build --configuration=release && mv .build/release/do-not-disturb .",
+		"build": "node ./build.js",
+		"postinstall": "npm run build",
 		"//prepublish": "npm run build"
 	},
-	"files": [
-		"index.js",
-		"do-not-disturb"
-	],
 	"keywords": [
 		"macos",
 		"swift",
